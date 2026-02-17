@@ -1,10 +1,26 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>Todo App</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
 </head>
 <body>
-    <h1>App Working </h1>
-    <p>Welcome from Kaushal!</p>
+
+    <div class="container">
+
+        <h1 class="logo">Todo</h1>
+        <p class="tagline">Organize your life beautifully</p>
+
+        <div class="card">
+            <h2>Welcome, Wanderer 👋</h2>
+            <p>Start managing your tasks with clarity and focus.</p>
+
+            <button class="primary-btn">Get Started</button>
+        </div>
+
+    </div>
+
 </body>
+<script src="{% static 'home.js' %}"></script>
 </html>
