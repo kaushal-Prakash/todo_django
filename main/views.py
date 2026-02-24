@@ -25,3 +25,14 @@ def time(request, offset):
             "offset": offset,
         },
     )
+    
+    
+def age_calculator(request,year):
+    age = datetime.datetime.now().year - year
+    return render(
+        request,
+        "age_calculator.html",
+        context={
+            "current_age": age,
+        },
+    )
