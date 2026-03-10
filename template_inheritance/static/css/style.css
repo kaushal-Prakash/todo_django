@@ -1,0 +1,257 @@
+/* ===== CSS VARIABLES (NEON THEME) ===== */
+:root {
+  --bg-base: #0a0a0f;
+  --card-bg: #151520;
+  --text-main: #e2e8f0;
+  --text-muted: #94a3b8;
+  --neon-cyan: #00f3ff;
+  --neon-purple: #b026ff;
+  --neon-pink: #ff007f;
+}
+
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== BODY (FLEX FOR STICKY FOOTER) ===== */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: radial-gradient(circle at top right, #1a0b2e, var(--bg-base) 40%);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+  
+  /* Flexbox setup to push footer to the bottom */
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== HEADER ===== */
+header {
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 2px solid var(--neon-purple);
+  box-shadow: 0 0 15px rgba(176, 38, 255, 0.3);
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* Logo */
+header h2 {
+  font-size: 26px;
+  letter-spacing: 2px;
+  color: #fff;
+  text-transform: uppercase;
+  text-shadow: 0 0 8px var(--neon-cyan), 0 0 20px var(--neon-cyan);
+}
+
+/* ===== NAVBAR ===== */
+nav a {
+  color: var(--text-main);
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  transition: 0.3s;
+}
+
+/* underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 2px;
+  left: 0;
+  bottom: -4px;
+  background: var(--neon-pink);
+  box-shadow: 0 0 10px var(--neon-pink);
+  transition: 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px var(--neon-pink);
+}
+
+/* ===== MAIN CONTAINER ===== */
+.container {
+  /* This tells the container to grow and take up available space, pushing the footer down */
+  flex: 1; 
+  width: 85%;
+  max-width: 1100px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+/* ===== HEADINGS ===== */
+h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px var(--neon-purple), 0 0 30px var(--neon-purple);
+}
+
+/* ===== TEXT ===== */
+p {
+  margin-bottom: 15px;
+  font-size: 16px;
+  color: var(--text-muted);
+}
+
+/* ===== CARDS ===== */
+.card {
+  background: var(--card-bg);
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 243, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), inset 0 0 15px rgba(0, 243, 255, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0, 243, 255, 0.15), inset 0 0 20px rgba(0, 243, 255, 0.1);
+  border-color: rgba(0, 243, 255, 0.5);
+}
+
+/* ===== CONTACT FORM ===== */
+form {
+  margin-top: 20px;
+  max-width: 500px;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(176, 38, 255, 0.3);
+  box-shadow: 0 0 20px rgba(176, 38, 255, 0.1);
+}
+
+label {
+  font-weight: 600;
+  color: var(--neon-cyan);
+  letter-spacing: 1px;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 8px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  background: #0a0a0f;
+  color: #fff;
+  border: 1px solid #333;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--neon-cyan);
+  outline: none;
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+/* ===== BUTTON ===== */
+button {
+  background: linear-gradient(45deg, var(--neon-purple), var(--neon-pink));
+  color: white;
+  border: none;
+  padding: 14px 28px;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 0 15px rgba(255, 0, 127, 0.4);
+}
+
+button:hover {
+  background: linear-gradient(45deg, var(--neon-pink), var(--neon-purple));
+  box-shadow: 0 0 25px rgba(255, 0, 127, 0.7);
+  transform: scale(1.02);
+}
+
+/* ===== LIST ===== */
+ul {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  list-style-type: none; /* Removed standard bullets for custom ones */
+}
+
+ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+ul li::before {
+  content: "▹";
+  position: absolute;
+  left: 0;
+  color: var(--neon-cyan);
+  text-shadow: 0 0 5px var(--neon-cyan);
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: rgba(10, 10, 15, 0.95);
+  color: var(--text-muted);
+  text-align: center;
+  padding: 25px;
+  font-size: 14px;
+  border-top: 2px solid var(--neon-cyan);
+  box-shadow: 0 -5px 20px rgba(0, 243, 255, 0.1);
+}
+
+footer p {
+  margin: 0;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+  }
+
+  nav {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  nav a {
+    margin: 0;
+  }
+
+  .container {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 28px;
+  }
+}
