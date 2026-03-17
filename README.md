@@ -8,3 +8,9 @@
 
 ## python manage.py runserver
 - to start the server
+
+## python manage.py makemigrations
+- to make migrations for the models in models.py
+
+## python  manage.py migrate
+- to apply the migrations
