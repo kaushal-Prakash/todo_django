@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>View Enrolled Students</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    <select name="course">
+        {% for c in courses %}
+            <option value="{{ c.id }}">{{ c.coursename }}</option>
+        {% endfor %}
+    </select>
+
+    <button type="submit">Show</button>
+</form>
+
+{% if students %}
+    <h3>Students in {{ selected_course.coursename }}</h3>
+    <ul>
+        {% for s in students %}
+            <li>{{ s.name }} ({{ s.usn }})</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+
+{% endblock %}

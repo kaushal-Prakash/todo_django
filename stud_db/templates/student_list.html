@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Students</h2>
+
+<ul>
+    {% for s in students %}
+        <li>{{ s.usn }} - {{ s.name }} (Sem {{ s.sem }})</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Course System</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 20px;
+        }
+        nav {
+            background: #333;
+            padding: 10px;
+        }
+        nav a {
+            color: white;
+            margin: 10px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🔗 Navbar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/students/">Students</a>
+        <a href="/courses/">Courses</a>
+        <a href="/register/">Register</a>
+        <a href="/enrolled/">Enrolled</a>
+    </nav>
+
+    <hr>
+
+    <!-- 🔄 Content will come here -->
+    {% block content %}
+    {% endblock %}
+
+</body>
+</html>
